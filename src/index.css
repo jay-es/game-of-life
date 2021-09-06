@@ -4,6 +4,10 @@
 button {
   margin-left: 0.5em;
 }
+.timer {
+  display: inline-block;
+  margin-left: 1em;
+}
 
 .row {
   line-height: 1;

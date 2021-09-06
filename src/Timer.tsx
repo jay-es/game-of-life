@@ -1,4 +1,4 @@
-import { Component, createSignal, For } from "solid-js";
+import { Component, createSignal, For, onCleanup } from "solid-js";
 import { store } from "./store";
 
 const radioGroup: { label: string; value: number }[] = [
@@ -32,8 +32,10 @@ export const Timer: Component = () => {
     }
   };
 
+  onCleanup(stop);
+
   return (
-    <>
+    <div class="timer">
       <button onClick={handleClick}>{timerId() ? "stop" : "auto"}</button>
       <For each={radioGroup}>
         {({ label, value }) => (
@@ -47,6 +49,6 @@ export const Timer: Component = () => {
           </label>
         )}
       </For>
-    </>
+    </div>
   );
 };
