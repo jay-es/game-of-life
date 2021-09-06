@@ -1,3 +1,10 @@
+.control {
+  margin-bottom: 1em;
+}
+button {
+  margin-left: 0.5em;
+}
+
 .row {
   line-height: 1;
 }
