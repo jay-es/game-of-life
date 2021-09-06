@@ -1,6 +1,7 @@
 import { Component, For } from "solid-js";
 import { Cell } from "./Cell";
 import { store } from "./store";
+import { Timer } from "./Timer";
 
 const App: Component = () => {
   return (
@@ -10,6 +11,7 @@ const App: Component = () => {
       <div class="control">
         generation: {store.state.generation}
         <button onClick={store.next}>next</button>
+        <Timer />
       </div>
 
       <For each={store.state.cells}>

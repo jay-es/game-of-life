@@ -5,8 +5,8 @@ type State = {
   generation: number;
 };
 
-const WIDTH = 25;
-const HEIGHT = 15;
+const WIDTH = 40;
+const HEIGHT = 30;
 
 const [state, setState] = createStore<State>({
   cells: [...Array(HEIGHT)].map(() => [...Array(WIDTH)].fill(false)),
