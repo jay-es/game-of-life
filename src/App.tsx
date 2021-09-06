@@ -1,6 +1,6 @@
-import { Component, For } from "solid-js";
+import { Component } from "solid-js";
 import { Cell } from "./Cell";
-import { store } from "./store";
+import { store, initialCells } from "./store";
 import { Timer } from "./Timer";
 
 const App: Component = () => {
@@ -14,15 +14,13 @@ const App: Component = () => {
         <Timer />
       </div>
 
-      <For each={store.state.cells}>
-        {(row, ri) => (
-          <div class="row">
-            <For each={row}>
-              {(col, ci) => <Cell ri={ri()} ci={ci()} value={col} />}
-            </For>
-          </div>
-        )}
-      </For>
+      {initialCells.map((row, ri) => (
+        <div class="row">
+          {row.map((_, ci) => (
+            <Cell ri={ri} ci={ci} />
+          ))}
+        </div>
+      ))}
     </div>
   );
 };

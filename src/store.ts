@@ -8,8 +8,12 @@ type State = {
 const WIDTH = 40;
 const HEIGHT = 30;
 
+export const initialCells: State["cells"] = [...Array(HEIGHT)].map(() =>
+  [...Array(WIDTH)].fill(false)
+);
+
 const [state, setState] = createStore<State>({
-  cells: [...Array(HEIGHT)].map(() => [...Array(WIDTH)].fill(false)),
+  cells: initialCells,
   generation: 0,
 });
 

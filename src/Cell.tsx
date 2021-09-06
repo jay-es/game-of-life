@@ -2,7 +2,6 @@ import { Component } from "solid-js";
 import { store } from "./store";
 
 type Props = {
-  value: boolean;
   ri: number;
   ci: number;
 };
@@ -15,7 +14,7 @@ export const Cell: Component<Props> = (props) => {
   return (
     <input
       type="checkbox"
-      checked={props.value}
+      checked={store.state.cells[props.ri][props.ci]}
       onChange={(e) => handleChange(e.currentTarget.checked)}
     />
   );
