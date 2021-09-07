@@ -9,10 +9,12 @@ const App: Component = () => {
       <h1>Game of Life!</h1>
 
       <div class="control">
-        generation: {store.state.generation}
-        <button onClick={store.reset}>reset</button>
-        <button onClick={store.random}>random</button>
-        <button onClick={store.next}>next</button>
+        generation: {store.state.generation.toLocaleString()}
+        <span class="buttons">
+          <button onClick={store.reset}>reset</button>
+          <button onClick={store.random}>random</button>
+          <button onClick={store.next}>next</button>
+        </span>
         <Timer />
       </div>
 

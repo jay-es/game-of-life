@@ -35,8 +35,8 @@ export const Timer: Component = () => {
   onCleanup(stop);
 
   return (
-    <div class="timer">
-      <button onClick={handleClick}>{timerId() ? "stop" : "auto"}</button>
+    <span class="timer">
+      <button onClick={handleClick}>{timerId() ? "stop" : "start"}</button>
       <For each={radioGroup}>
         {({ label, value }) => (
           <label>
@@ -49,6 +49,6 @@ export const Timer: Component = () => {
           </label>
         )}
       </For>
-    </div>
+    </span>
   );
 };
