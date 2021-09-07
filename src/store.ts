@@ -26,6 +26,16 @@ export const store = {
     setState("cells", makeNext());
     setState("generation", (v) => v + 1);
   },
+  random: () => {
+    setState(
+      "cells",
+      initialCells.map((row) => row.map((_) => Math.random() > 0.8))
+    );
+  },
+  reset: () => {
+    setState("cells", initialCells);
+    setState("generation", 0);
+  },
 };
 
 const makeNext = () =>

@@ -10,6 +10,8 @@ const App: Component = () => {
 
       <div class="control">
         generation: {store.state.generation}
+        <button onClick={store.reset}>reset</button>
+        <button onClick={store.random}>random</button>
         <button onClick={store.next}>next</button>
         <Timer />
       </div>
